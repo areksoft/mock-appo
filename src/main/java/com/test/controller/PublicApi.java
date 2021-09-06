@@ -1,5 +1,7 @@
 package com.test.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ public class PublicApi {
 	ApiService apiService;
 
 	@GetMapping(value = "/get-users")
-	public ResponseEntity<ResponseDTO> getUsers() {
+	public ResponseEntity<ResponseDTO> getUsers(HttpServletRequest request) {	
 		ResponseDTO obj = apiService.getUsers();
 		return ResponseEntity.status(HttpStatus.OK).body(obj);
 	}

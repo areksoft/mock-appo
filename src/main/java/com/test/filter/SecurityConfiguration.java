@@ -1,7 +1,6 @@
 package com.test.filter;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,20 +15,10 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
-	@Value("${user.name}")
-	private String userName;
-
-	@Value("${password}")
-	private String password;
-
-	@Value("${role}")
-	private String role;
-
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser(userName).password(password).roles(role).and().withUser("rani")
-				.password("{noop}test@123").roles("USER");
+		auth.inMemoryAuthentication().withUser("divyarani").password("{noop}@1234Test").roles("USER").and()
+				.withUser("divyarani1").password("{noop}@1234Test").roles("USER");
 	}
 
 	@Override

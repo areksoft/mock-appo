@@ -1,0 +1,3 @@
+curl --location --request GET 'http://127.0.0.1:8080/apis/get-posts' \
+--header 'Authorization: Basic ZGl2eWFyYW5pOkAxMjM0VGVzdA==' \
+--header 'Cookie: JSESSIONID=395AA088F02DFC7356D8D3B21358AA7C'

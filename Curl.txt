@@ -1,0 +1,19 @@
+Generate JWT Token
+
+
+curl --location --request POST 'http://127.0.0.1:8080/apis/authenticate' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=395AA088F02DFC7356D8D3B21358AA7C' \
+--data-raw '{
+    "userName":"divya",
+    "password":"@1234Test"
+}'
+
+
+APIS With validation
+
+
+curl --location --request GET 'http://127.0.0.1:8080/apis/get-posts' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaXZ5YSIsImV4cCI6MTYzMTEyMjU0OCwiaWF0IjoxNjMxMDg2NTQ4fQ.JlJ8ClPlhSgZb5zg5sz1gzq3b2KSaWH2P8nsE7PyG7g' \
+--header 'Cookie: JSESSIONID=395AA088F02DFC7356D8D3B21358AA7C'
+
